@@ -10,7 +10,11 @@ See my video explanation on this (in नेपाली language, but the Englis
 
 Please click this jupyter notebook (.ipynb) file [beam_balance](/beam_balance.ipynb) to see the code.
 
-The analysis of this situation is strightforward. Just write the kinetic and potential energy to get the Lagrangian. Then, use Euler-Lagrange equation to get the equation of motion of the system. Since, the only degree of freedom of this system is the angle made by the beam balance (θ) and is the generalised coordinate, the resulting equation of motion is a second-order differential equation of θ. 
+The analysis of this situation is strightforward. Just write the kinetic and potential energy to get the Lagrangian. Then, use Euler-Lagrange equation to get the equation of motion of the system. Since, the only degree of freedom of this system is the angle made by the beam balance (θ) and is the generalised coordinate, the resulting equation of motion is a second-order differential equation in θ(t). The differential equation is then solved numerically. The resulting solutions θ(t) seems to have a decayed oscillation.
+
+<p align="center">
+  <img src="angle.png" width="250" />
+</p>
 
 Strictly speaking, we should be adding non-conservative forces in the Euler-Lagrange equation (Rayleigh dissipation function), but `euler_equations` from `sympy.calculus.euler` apparently does not allow that (or maybe I don't know). Instead, I added non-conservative forces manually later on. 
 
